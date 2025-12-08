@@ -1,0 +1,8 @@
+config.json
+feeds/
+__pycache__/
+*.pyc
+.env
+.venv/
+.vscode/
+.DS_Store/feeds

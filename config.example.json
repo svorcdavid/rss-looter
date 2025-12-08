@@ -1,0 +1,17 @@
+[
+	{
+		"name": "exampleweb.com",
+		"url": "https://website.com/articles",
+		"selectors": {
+			"item": "div.article",
+			"title": "h3.title a",
+			"link": "h3.title a",
+			"summary": "div.perex",
+			"date": "span.date"
+		},
+		"base_url": "https://exampleweb.com",
+		"rss_output": "feeds/exampleweb.xml",
+		"limit": 20,
+		"date_formats": ["%d/%m/%Y"]
+	}
+]
