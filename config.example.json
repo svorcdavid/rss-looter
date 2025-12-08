@@ -10,6 +10,7 @@
 			"date": "span.date"
 		},
 		"base_url": "https://exampleweb.com",
+		"link_from_item": true,
 		"rss_output": "feeds/exampleweb.xml",
 		"limit": 20,
 		"date_formats": ["%d/%m/%Y"]

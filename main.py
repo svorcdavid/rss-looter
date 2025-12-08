@@ -105,7 +105,13 @@ def generate_rss(source):
 
 		# Process data
 		title = extract_text(title_el) or "no title"
-		link = urljoin(source["base_url"], extract_attr(link_el, "href") or "#")
+		# Handle link extraction based on config
+		if source.get("link_from_item", False):
+			link = urljoin(source["base_url"], item.get("href", "#") or "#")
+		else:
+			link_el = item.select_one(selectors.get("link", ""))
+			link = urljoin(source["base_url"], extract_attr(link_el, "href") or "#")
+
 		summary_text = extract_text(summary_el) or "no summary available"
 		
 		# Parse data

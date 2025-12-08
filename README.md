@@ -24,11 +24,34 @@ Important fields in each source:
 - `name`: human-friendly feed name
 - `url`: page to download
 - `selectors.item`: CSS selector for each article/container
-- `selectors.title`, `selectors.link`, `selectors.summary`, `selectors.date`, `selectors.image`
+- `selectors.title`, `selectors.summary`, `selectors.date`, `selectors.image`: CSS selectors within each item
+- `selectors.link`: CSS selector for the link element (see `link_from_item` below)
 - `base_url`: used to resolve relative links/images
 - `rss_output`: path to save the generated RSS file
-- `limit`: maximum number of items to include
-- `date_formats`: list of `datetime.strptime` formats to try
+- `limit`: maximum number of items to include (default: 10)
+- `date_formats`: list of `datetime.strptime` formats to try (default: `["%d.%m.%Y"]`)
+- `link_from_item` (optional): `true` if the item element itself is the link (has `href` attribute); `false` if link is a child selector (default: `false`)
+
+**Link extraction modes**
+
+The script supports two ways to extract article links:
+
+1. **`link_from_item: false`** (default): The item is a container and you provide a selector to find the `<a>` tag inside it.
+   ```json
+   "selectors": {
+     "item": "article.post",
+     "link": "header h2 a"
+   }
+   ```
+
+2. **`link_from_item: true`**: The item element itself is the `<a>` tag with the `href` attribute.
+   ```json
+   "selectors": {
+     "item": "a.main",
+     "link": "self"
+   }
+   ```
+   When set to `true`, the script extracts `href` directly from the item element.
 
 **Usage**
 Run the script:
