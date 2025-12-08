@@ -5,7 +5,7 @@ Simple script to generate RSS feeds from HTML pages by using CSS selectors.
 **What it does**
 - **Purpose**: Parses web pages with BeautifulSoup and produces RSS XML files using `feedgen`.
 - **Input**: A `config.json` file that lists sources with CSS selectors, base URL, and output path.
-- **Output**: RSS files (example: `feeds/something.xml`).
+- **Output**: RSS files (example: `feeds/example.xml`).
 
 **Install**
 Install dependencies (use a venv):
