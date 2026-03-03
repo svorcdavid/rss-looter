@@ -71,7 +71,7 @@ def generate_rss(source):
 	
 	try:
 		response = requests.get(source["url"], timeout=15)
-		response.raise_for_status() # Vyhodí chybu pro 4xx/5xx stav
+		response.raise_for_status() # Error on 4xx/5xx response
 	except requests.exceptions.RequestException as e:
 		print(f"❌ ERR: downloading {source['url']}: {e}")
 		return

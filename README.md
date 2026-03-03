@@ -63,7 +63,7 @@ python main.py
 The script will read `config.json`, generate RSS files and save them to the paths specified by `rss_output`.
 
 **Security & privacy**
-- Do not commit secrets or credentials into `config.json`. If a site requires authentication, keep credentials out of the repo (use environment variables or a private config).
+- Do not commit secrets or credentials into `config.json`. Keep credentials (API keys, private URLs..) out of the repo (use environment variables or a private config).
 
 **License**
 This project is licensed under the MIT License — see `LICENSE`.
